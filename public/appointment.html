@@ -7,11 +7,62 @@
 
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 	<div class="container">
 		<div class="row">
+			<form class="col s12">
+
+		      	<div class="row">
+		        	<div class="input-field col s4">
+		          		<input type="text" class="service" placeholder="Select A Service">
+		          		<label for="service">Services</label>
+		        	</div>
+		        	<div class="input-field col s4">
+		          		<input type="text" class="datepicker" placeholder="Select A Date">
+		          		<label for="date">Date</label>
+		        	</div>
+		        	<div class="input-field col s4">
+		          		<input type="text" class="timepicker" placeholder="Select A Time">
+		          		<label for="time">Time</label>
+		        	</div>
+		      	</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Jane" id="first_name" type="text" class="validate">
+		          		<label for="first_name">First Name</label>
+		        	</div>
+		       		<div class="input-field col s6">
+		         		<input placeholder="Doe" id="last_name" type="text" class="validate">
+		          		<label for="last_name">Last Name</label>
+		        	</div>
+		      	</div>
+
+		      	<div class="row">
+		        	<div class="input-field col s12">
+		          		<input placeholder="sample@example.com" id="email" type="email" class="validate">
+		          		<label for="email">Email</label>
+		        	</div>
+		      	</div>
+				<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+					<i class="material-icons right">send</i>
+				</button>
+
+		    </form>
 		</div>
 	</div>
+		
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	
+	<!-- Materialize JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+	<!-- JS -->
+	<script type="text/javascript" src="./js/appointment.js"></script>
+
 </body>
 </html>
