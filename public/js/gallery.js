@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var userFeed = new Instafeed({
 		    get: 'user',
 		    userId: '7078617728',
-		    // accessToken: '28985591.0cb41ac.9f2d8e0e35d34a9bbc3ab8e52d07650f'
+		    accessToken: '7078617728.1677ed0.2fa48df8c5044e1388e8a300337eff86'
 		});
 		userFeed.run();
 	});

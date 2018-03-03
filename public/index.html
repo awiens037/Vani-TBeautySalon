@@ -1,45 +1,99 @@
-<!doctype html>
-<html lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Project 2 | Beauty Salon</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
+    <title>Vani-T Beauty Salon</title>
+    <style>
+        .container1 {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 33.3% 33.3% auto;
+            grid-template-areas: "header header header" ". message message""focus pullquote pullquote" ;
+        }
+        
+        .header {
+            grid-area: header;
+        }
+        
+        .message {
+            grid-area: message;
+        }
+        .pullquote {
+            grid-area: pullquote;
+        }
+                
+        .focus {
+            grid-area: focus;
+            text-align: center;
+        }
+        .footer {
+            grid-area: footer;
+            width: 100%;
+            background-color: #000;
+            color: #999;
+            text-align: center;
+            padding: 50px 0px 100px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 50% 50%;
+                grid-template-areas: "header header" "message message" "pullquote pullquote" "focus"
+             }            
+           }
+        
+        @media screen and (max-width: 768px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 100%;
+                grid-template-areas: "header" "message" "pullquote" "focus";
+            }
+            
+         }
+
+    </style>
 </head>
+
 <body>
-  <header id="masthead">
-    <div class="container">
-      <a href="index.html" id="logo">Logo | Name</a>
-      <nav>
-        <a href="index.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="stylist.html">Stylist</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="promotions.html">Promotions</a>
-        <a href="appointment.html">Appointment</a>
-      </nav>
+    <nav>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Stylist</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Promotions</a></li>
+            <li><a href="#">Appointments</a></li>
+        </ul>
+    </nav>
+    <div class="container1">
+        <div class="header">
+
+            <div id="heading">
+                <h2>Exploring Your<br> Mystic Beauty <br></h2>
+            </div>
+        </div>
+        <div class="message">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod sem ut nisl pharetra, at fringilla dolor convallis. Aenean vitae orci at orci interdum porttitor. Morbi vel tristique eros, pellentesque imperdiet sapien. Integer faucibus, nunc vitae facilisis vestibulum, neque eros gravida metus, sed </p>
+        </div>
+
+        <div class="pullquote">
+            <h2>&ldquo;Full service salon, specializing in hair, color, facials, microdermabrasion and make-up&rdquo;</h2></div>
+      
+        <div class="focus"><img class="round" src="img/personnel.jpg"></div>
+
     </div>
-  </header>
-  <div id="main-container" class="container">
-    <section class="main-section">
-      <h1>About Us</h1>
-      <!--<img src="assets/images/index.jpg" class="auth-image" alt="HomeWreckers_index.JPG">-->
-      <p>Sed condimentum sem eget hendrerit cursus. Cras sit amet efficitur neque, vel porttitor nulla. In accumsan mi in dictum pharetra. Sed non facilisis quam. Cras magna sem, blandit sit amet elit rutrum, bibendum pharetra elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia  nec urna mears.</p>
-      <p>Sed condimentum sem eget hendrerit cursus. Cras sit amet efficitur neque, vel porttitor nulla. In accumsan mi in dictum pharetra. Sed non facilisis quam. Cras magna sem, blandit sit amet elit rutrum, bibendum pharetra elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia .</p>
-    </section>
-    <section class="sidebar">
-      <div id="connect">
-        <h2>Connect with Us</h2>
-        <a href="#"><img src="assets/images/yelp.png" class="social" alt="Yelp" /></a>
-        <a href="#"><img src="assets/images/instagram.png" class="social" alt="Instagram" /></a>
-        <a href="appointment.html" class="social">Appointment</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-    <div class="container">
-      Copyright &copy; 2018 HomeWreckers
+    <div class="footer">
+        <p>&copy; 2018 Vani-T Beauty Salon</p>
     </div>
-  </footer>
 </body>
+
 </html>
