@@ -4,8 +4,8 @@ var db = require("../models");
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
-        //call the model method that gets all the burgers
-        db.burgers.findAll({}).then(function (data) {
+        //call the model method that gets all the appointments
+        db.appointments.findAll({}).then(function (data) {
             // if (err) {
             //     return res.status(501).end();
             // }
@@ -14,17 +14,20 @@ module.exports = function (app) {
                 Devouredburgers: data.filter(item => item.devoured == 1)
             })
         });
-        // {burgers: data}
+        // {appointments: data}
     });
 
-    // Create a new burger
-    app.post("/burgers", function (req, res) {
+    // Create a new appointment
+    app.post("/appointments", function (req, res) {
         // create takes an argument of an object describing the item we want to insert
         // into our table. In this case we just we pass in an object with a text and
         // complete property
-        db.burgers.create({
-            burger_name: req.body.burger_name,
-            devoured: req.body.devoured
+        db.appointments.create({
+            name: req.body.name,
+            service: req.body.service,
+            stylist: req.body.stylist,
+            date: req.body.date,
+            time: req.body.time
         }).then(function (data) {
             // if (err) {
             //     return res.status(502).end();
@@ -36,8 +39,8 @@ module.exports = function (app) {
         })
     });
     // Update a burger
-    app.put("/burgers/:id", function (req, res) {
-        db.burgers.update({
+    app.put("/appointments/:id", function (req, res) {
+        db.appointments.update({
                 //burger_name: req.body.burger_name,
                 devoured: 1
 
