@@ -7,30 +7,37 @@
 
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="instagramPhotos col s12">
+			<header id="masthead">
+				<div class="container">
+					<a href="index.html" id="logo">Logo | Name</a>
+						<nav>
+							<a href="index.html">About Us</a>
+							<a href="services.html">Services</a>
+							<a href="stylist.html">Stylist</a>
+							<a href="gallery.html">Gallery</a>
+							<a href="promotions.html">Promotions</a>
+							<a href="appointment.html">Appointment</a>
+						</nav>
+				</div>
+			</header>
+		</div>
+		<div class="row">
+			<div class="col s12">
 				<!-- Instagram Gallery -->
-				<div class="col s4">
-					<img class="materialboxed" style="width: 300px; height: 300px;" src="https://scontent-lax3-1.cdninstagram.com/vp/f34e850bac0760d59e10edf2f04cf13a/5B277479/t51.2885-15/s640x640/sh0.08/e35/27893534_2027088887575572_6309806011548958720_n.jpg">
-				</div>
-				<div class="col s4">
-					<img class="materialboxed" style="width: 300px; height: 300px;" src="https://scontent-lax3-1.cdninstagram.com/vp/f34e850bac0760d59e10edf2f04cf13a/5B277479/t51.2885-15/s640x640/sh0.08/e35/27893534_2027088887575572_6309806011548958720_n.jpg">
-				</div>
-				<div class="col s4">
-					<img class="materialboxed" style="width: 300px; height: 300px;" src="https://scontent-lax3-1.cdninstagram.com/vp/f34e850bac0760d59e10edf2f04cf13a/5B277479/t51.2885-15/s640x640/sh0.08/e35/27893534_2027088887575572_6309806011548958720_n.jpg">
-				</div>
-				<div class="col s4">
-					<img class="materialboxed" style="width: 300px; height: 300px;" src="https://scontent-lax3-1.cdninstagram.com/vp/f34e850bac0760d59e10edf2f04cf13a/5B277479/t51.2885-15/s640x640/sh0.08/e35/27893534_2027088887575572_6309806011548958720_n.jpg">
-				</div>
+				<div id="instafeed" class="instagramPhotos"></div>
 			</div>
 		</div>
 	</div>
 
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	
 	<!-- Materialize JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
