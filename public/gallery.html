@@ -8,33 +8,64 @@
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<style>
+        .container1 {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            grid-area: footer;
+            width: 100%;
+            background-color: #000;
+            color: #999;
+            text-align: center;
+            padding: 50px 0px 100px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 50% 50%;
+                grid-template-areas: "instagramPhotos"
+             }            
+           }
+        
+        @media screen and (max-width: 768px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 100%;
+                grid-template-areas: "instagramPhotos";
+            }
+            
+         }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-				<header id="masthead">
-					<div class="container">
-						<a href="index.html" id="logo">Logo | Name</a>
-							<nav>
-								<a href="index.html">About Us</a>
-								<a href="services.html">Services</a>
-								<a href="stylist.html">Stylist</a>
-								<a href="gallery.html">Gallery</a>
-								<a href="promotions.html">Promotions</a>
-								<a href="appointment.html">Appointment</a>
-							</nav>
-					</div>
-				</header>
-		</div>
-		<div class="row">
-			<div class="col s12">
-				<!-- Instagram Gallery -->
-				<div id="instafeed" class="instagramPhotos"></div>
-			</div>
+    <nav>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Stylist</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Promotions</a></li>
+            <li><a href="#">Appointments</a></li>
+        </ul>
+    </nav>
+
+    <div class="container1">
+		<!-- Instagram Gallery -->
+		<div id="instafeed" class="instagramPhotos">
+			<h3>Instagram Photos</h3>
 		</div>
 	</div>
+
+    <div class="footer">
+        <p>&copy; 2018 Vani-T Beauty Salon</p>
+    </div>
 
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
