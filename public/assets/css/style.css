@@ -42,9 +42,19 @@ nav ul li a:hover {
     display: inline-block;
 }
 
+.services {
+    padding-top: 100px;
+    line-height: 1.1em;
+    display: inline-block;
+}
+
 h3 {
     color: #404040;
     text-align: center;
+}
+
+p {
+    color: #404040;
 }
 
 img {
