@@ -45,6 +45,9 @@ nav ul li a:hover {
 .services {
     padding-top: 100px;
     line-height: 1.1em;
+}
+
+.serviceItem {
     display: inline-block;
 }
 
@@ -55,6 +58,7 @@ h3 {
 
 p {
     color: #404040;
+    text-align: center;
 }
 
 img {
