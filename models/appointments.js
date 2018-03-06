@@ -8,6 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             //     len: [1, 140]
             // },
         },
+        email: DataTypes.STRING,
         service: DataTypes.STRING,
         stylist: DataTypes.STRING,
         date: DataTypes.DATE,

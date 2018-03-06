@@ -1,3 +1,9 @@
+// require .env file
+require("dotenv").config();
+
+// keys for instagram api
+var keys = require("./keys.js");
+
 $(document).ready(function(){
 	$('.materialboxed').materialbox();
 
@@ -6,8 +12,7 @@ $(document).ready(function(){
 
 		var userFeed = new Instafeed({
 		    get: 'user',
-		    userId: '7078617728',
-		    accessToken: '7078617728.1677ed0.2fa48df8c5044e1388e8a300337eff86'
+		    keys.instagram
 		});
 		userFeed.run();
 	});

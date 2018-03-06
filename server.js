@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 const methodOverride = require('method-override');
 const helmet = require('helmet')
 const db = require('./models');
-
+const dotenv = require('dotenv')
 
 // Sets up the Express App
 // =============================================================
@@ -29,7 +29,7 @@ app.use(express.static('public'));
 
 // Routes
 // =============================================================
-require("./controllers/burgers_controller.js")(app);
+require("./controllers/salon_controller.js")(app);
 
 
 

@@ -9,25 +9,24 @@ module.exports = function (app) {
             // if (err) {
             //     return res.status(501).end();
             // }
-            res.render("index", {
-                Activeburgers: data.filter(item => item.devoured == 0),
-                Devouredburgers: data.filter(item => item.devoured == 1)
-            })
+            res.render("index", data)
         });
         // {appointments: data}
     });
 
     // Create a new appointment
-    app.post("/appointments", function (req, res) {
+    app.post("/appointment", function (req, res) {
         // create takes an argument of an object describing the item we want to insert
         // into our table. In this case we just we pass in an object with a text and
         // complete property
         db.appointments.create({
-            name: req.body.name,
             service: req.body.service,
-            stylist: req.body.stylist,
             date: req.body.date,
-            time: req.body.time
+            time: req.body.time,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            telephone: req.body.telephone
         }).then(function (data) {
             // if (err) {
             //     return res.status(502).end();
