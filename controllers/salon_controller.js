@@ -3,19 +3,17 @@ var db = require("../models");
 // Routes =============================================================
 module.exports = function (app) {
 
-    app.get("/", function (req, res) {
+    app.get("/dashboard1", function (req, res) {
         //call the model method that gets all the appointments
         db.appointments.findAll({}).then(function (data) {
             // if (err) {
             //     return res.status(501).end();
             // }
-            res.render("index", {
-                Activeburgers: data.filter(item => item.devoured == 0),
-                Devouredburgers: data.filter(item => item.devoured == 1)
+            res.json(data)
             })
         });
         // {appointments: data}
-    });
+    // });
 
     // Create a new appointment
     app.post("/appointments", function (req, res) {
@@ -23,11 +21,15 @@ module.exports = function (app) {
         // into our table. In this case we just we pass in an object with a text and
         // complete property
         db.appointments.create({
-            name: req.body.name,
-            service: req.body.service,
-            stylist: req.body.stylist,
+            services: req.body.services,
             date: req.body.date,
-            time: req.body.time
+            time: req.body.time,
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phone: req.body.phone,
+            stylist: req.body.stylist,
+
         }).then(function (data) {
             // if (err) {
             //     return res.status(502).end();
@@ -71,7 +73,7 @@ module.exports = function (app) {
 
                 //     res.status(200).end();
 
-            })
+            // })
 
-    });
+    // });
 };
