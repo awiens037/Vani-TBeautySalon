@@ -38,7 +38,7 @@ module.exports = function (app) {
             console.log(data);
         })
     });
-    // Update a burger
+    // Update an appointment
     app.put("/appointments/:id", function (req, res) {
         db.appointments.update({
                 //burger_name: req.body.burger_name,
