@@ -39,24 +39,24 @@ module.exports = function (app) {
         })
     });
     // Update a burger
-    app.put("/appointments/:id", function (req, res) {
-        db.appointments.update({
+    // app.put("/appointments/:id", function (req, res) {
+    //     db.appointments.update({
                 //burger_name: req.body.burger_name,
-                devoured: 1
+            //     devoured: 1
 
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(function (data) {
-                if (data.changedRows === 0) {
+            // }, {
+            //     where: {
+            //         id: req.params.id
+            //     }
+            // })
+            // .then(function (data) {
+            //     if (data.changedRows === 0) {
                     // If no rows were changed, then the ID must not exist, so 404
-                    return res.status(404).end();
-                }
+                //     return res.status(404).end();
+                // }
 
-                res.status(200).end();
-                res.json(data);
+                // res.status(200).end();
+                // res.json(data);
                 //   });
                 // burger.update(req.params.id, function (err, data) {
 
