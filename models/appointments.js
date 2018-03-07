@@ -8,10 +8,11 @@ module.exports = function (sequelize, DataTypes) {
             //     len: [1, 140]
             // },
         },
-        service: DataTypes.STRING,
+        services: DataTypes.STRING,
         stylist: DataTypes.STRING,
         date: DataTypes.DATE,
         time: DataTypes.TIME
+        
     });
     return appointments;
 };
