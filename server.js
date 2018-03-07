@@ -42,6 +42,8 @@ const db = require("./models");
 
 //Routes
 const authRoute = require('./routes/auth.js')(app, passport);
+const saloncontroller = require('./controllers/salon_controller.js')(app);
+
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user); 

@@ -2,22 +2,44 @@
 <html>
  
 <head>
-    <title></title>
+    <title>Sign-Up</title>
+    <!-- viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./public/assets/css/style.css">
 </head>
  
 <body>
+    <nav>
+        <ul>
+            <li><a href="#"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+            <li>Admin Dashboard</li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
     <form id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
+        <input class="text" name="email" type="email" required/>
         <label for="firstname">Firstname</label>
         <input name="firstname" type="text" />
         <label for="lastname">Lastname</label>
         <input name="lastname" type="text" />
         <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
+        <input name="password" type="password" required/>
+        <input class="btn" type="submit" value="Sign Up" onclick="validate()" />
     </form>
- 
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="./public/js/login.js"></script>
+
+
 </body>
  
 </html>
