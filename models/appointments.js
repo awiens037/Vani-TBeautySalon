@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function (sequelize, DATATYPES) {
     var appointments = sequelize.define("appointments", {
  
         id: {
@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
  
-        phone: {
+        phonenumber: {
             type: DATATYPES.STRING,
             allowNull: false
         }
