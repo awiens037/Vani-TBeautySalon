@@ -8,12 +8,18 @@
 <body>
     <form id="signin" name="signin" method="post" action="signin">
         <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
+        <input class="text" name="email" type="text" required/>
         <label for="password">Password</label>
-        <input name="password" type="password" id="password" />
-        <input class="btn" type="submit" value="Sign In" />
+        <input name="password" type="password" id="password" required/>
+        <input class="btn" type="submit" value="Sign In" onclick="validate()" />
     </form>
- 
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<!-- JS -->
+	<script type="text/javascript" src="./public/js/login.js"></script>
+
 </body>
- 
+
 </html>
