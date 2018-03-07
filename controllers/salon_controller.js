@@ -2,17 +2,25 @@ var db = require("../models");
 
 // Routes =============================================================
 module.exports = function (app) {
-
-    app.get("/dashboard1", function (req, res) {
+    
+    app.get("/dashboard", function (req, res) {
         //call the model method that gets all the appointments
+        console.log('dashboard endpoint')
         db.appointments.findAll({}).then(function (data) {
             // if (err) {
             //     return res.status(501).end();
             // }
-            res.json(data)
+            console.log('query works')
+            console.log(data);
+            
+            res.render('dashboard', {appointments: data});
+            
+        //    res.json(data);
+            
             })
         });
         // {appointments: data}
+    
     // });
 
     // Create a new appointment

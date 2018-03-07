@@ -1,3 +1,4 @@
+var db = require("../models");
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
@@ -13,8 +14,20 @@ exports.signin = function (req, res) {
 }
 
 exports.dashboard = function (req, res) {
-
-    res.render('dashboard');
+    console.log('render dashboard')
+    db.appointments.findAll({}).then(function (data) {
+        // if (err) {
+        //     return res.status(501).end();
+        // }
+        console.log('query works')
+        console.log(data);
+        
+        res.render('dashboard', {appointments: data});
+        
+    //    res.json(data);
+        
+        })
+    // res.render('dashboard');
 
 }
 
