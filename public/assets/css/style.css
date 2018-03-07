@@ -4,7 +4,7 @@ body {
     line-height: 1.8em;
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: #404040;
 }
 nav {
     position: fixed;
@@ -43,6 +43,11 @@ nav ul li a:hover {
 }
 
 .services {
+    padding-top: 100px;
+    line-height: 1.1em;
+}
+
+.booking {
     padding-top: 100px;
     line-height: 1.1em;
 }
