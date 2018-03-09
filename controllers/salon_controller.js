@@ -1,9 +1,10 @@
 var db = require("../models");
 
 // Routes =============================================================
+var saloncontroller = function () {
 module.exports = function (app) {
     
-    app.get("/dashboard", function (req, res) {
+    app.get("", function (req, res) {
         //call the model method that gets all the appointments
         console.log('dashboard endpoint')
         db.appointments.findAll({}).then(function (data) {
@@ -24,10 +25,11 @@ module.exports = function (app) {
     // });
 
     // Create a new appointment
-    app.post("/appointments", function (req, res) {
+    app.post("/appointment", function (req, res) {
         // create takes an argument of an object describing the item we want to insert
         // into our table. In this case we just we pass in an object with a text and
         // complete property
+        console.log('this is working')
         db.appointments.create({
             services: req.body.services,
             date: req.body.date,
@@ -42,9 +44,9 @@ module.exports = function (app) {
             // if (err) {
             //     return res.status(502).end();
             // }
-            res.json(
-                data
-            );
+            // res.json(
+            //     data
+            // );
             console.log(data);
         })
     });
@@ -85,3 +87,5 @@ module.exports = function (app) {
 
     // });
 };
+
+}
