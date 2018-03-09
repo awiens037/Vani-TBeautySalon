@@ -1,135 +1,107 @@
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 34px;
-  color: #000;
-  background: url("../images/index.jpg") fixed center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-
-}
-* {
-  box-sizing: border-box;
-}
-/* general */
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  clear: both;
-}
-h1,
-h2,
-h3,
-p {
-  margin-bottom: 20px;
-}
-p:last-child {
-  margin-bottom: 0;
-}
-h1,
-h2,
-h3 {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-weight: 700;
-  color: #ff1493;
-}
-h1 {
-  padding-bottom: 20px;
-  font-size: 30px;
-  line-height: 49px;
-  border-bottom: 3px solid #ffc0cb;
-}
-h2,
-h3 {
-  font-size: 22px;
-}
-/* header */
-#masthead {
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  margin: 0 0 30px;
-  overflow: auto;
-  color: #fff;
-  /*border-bottom: 2px solid #ccc;*/
-}
-#logo {
-  float: left;
-  width: 250px;
-  height: 90px;
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 90px;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  background: #ffb6c1;
+    height: 100%;
+    background: url("../images/index.jpg") fixed center center;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8em;
+    margin: 0;
+    padding: 0;
+    color: #fff;
 }
 nav {
-  float: right;
-  margin-top: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-bottom: solid #999 1px;
+    
 }
-nav a {
-  display: inline-block;
-  padding-left: 15px;
-  margin-left: 15px;
-  line-height: 18px;
-  color: #000;
-  text-decoration: none;
-  border-left: 1px solid #efefef;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
-nav a:first-child {
-  border-left: 0 none;
+nav ul li {
+    display: inline;
 }
-/* footer */
-footer {
-  padding: 30px 0;
-  clear: both;
-  font-size: 12px;
-  color: #fff;
-  color: #000;
-  text-align: center;
-  background: #ffb6c1;
-  border-top: 8px solid #ff1493;
+nav ul li a {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin: auto 0 0 10px;
+    transition: all 0.5s;
+    font-size: 1.25em;
 }
-/* sidebar */
-.sidebar {
-  float: right;
-  width: 100%;
-  max-width: 270px;
-  padding: 30px;
-  margin-bottom: 20px;
-  /*background: #fff;*/
-  border: 1px solid #ffc0cb;
+nav ul li a:hover {
+    color: #ffeda1;
 }
-h3,
-.sidebar h2 {
-  padding-bottom: 20px;
-  margin-bottom: 15px;
-  line-height: 22px;
-  border-bottom: 2px solid #ffc0cb;
+.container1 {
+    padding: 0px 40px 40px 40px;
 }
-.social {
-  width: 62px;
-  height: 62px;
-  margin-top: 8px;
-  margin-right: 5px;
+#heading h2 {
+    padding-top: 50px;
+    text-align: right;
+    font-size: 6.5em;
+    line-height: 1.1em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    font-style: italic;
+    color: #fff1a3;
 }
-.social:last-child {
-  margin-right: 0;
-  color: #000;
+.message p {
+    font-size: 1.6em;
+    line-height: 1.6em;
+    color: #fff;
 }
-/* main */
-#main-container {
-  padding-top: 130px;
+.pullquote h2 {
+    border-top: 1px solid #fff1a3;
+    border-bottom: 1px solid #fff1a3;
+    padding: 50px 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    font-size: 2.2em;
+    text-align: center;
+    line-height: 1.6em;
+    margin-bottom: 50px;
+    color: #fff1a3;
 }
-.main-section {
-  float: left;
-  width: 100%;
-  max-width: 650px;
-  padding: 30px;
-  margin: 0 0 40px;
-  border: 1px solid #ffc0cb;
+.round {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid #fff;
 }
+
+
+@media screen and (max-width: 768px) {
+    body {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, 
+        rgba(0, 0, 0, 0.5) 100%), 
+        url(../img/index.jpg) fixed center center;
+        background-size: cover;
+    }
+    #heading h2 {
+        padding-top: 100px;
+        text-align: center;
+        font-size: 2.8em;
+    }
+    .message p {
+        font-size: 1.4em;
+    }
+    .pullquote h2 {
+        font-size: 1.8em;
+        line-height: 1.6em;
+    }
+}
+/* promotions page keyframes slides*/
+    @-webkit-keyframes slide {
+        20% {margin-left: 0px;}
+        30% {margin-left: -728px;}
+        50% {margin-left: -728px;}
+        60% {margin-left: -1456px;}
+        70% {margin-left: -1456px;}
+        80% {margin-left: -2184px;}
+        90% {margin-left: -2184px;}
+      }
