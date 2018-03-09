@@ -4,16 +4,6 @@ var authController = require('../controllers/authcontroller.js');
 
 module.exports = function (app, passport) {
 
-    // app.get('/appointment', router.appointment);
-
-    // app.post('/appointment', passport.authenticate('local-appointment', {
-    //     successRedirect: '/signin',
-
-    //     failureRedirect: '/appointment'
-
-    // }));
-
-
     app.get('/signup', authController.signup);
 
 
@@ -25,7 +15,6 @@ module.exports = function (app, passport) {
 
             failureRedirect: '/signup'
 
-            // failureFlash: "Wrong"
         }
 
     ));

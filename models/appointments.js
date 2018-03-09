@@ -50,14 +50,6 @@ module.exports = function (sequelize, Datatypes) {
         type: Datatypes.STRING,
         notEmpty: true
        }
-
- 
-        // status: {
-        //     type: Datatypes.ENUM('active', 'inactive'),
-        //     defaultValue: 'active'
-        // }
- 
- 
     },
 {timestamps: false}
 );
