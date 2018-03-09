@@ -13,12 +13,12 @@ module.exports = function (sequelize, Datatypes) {
         },
 
         date: {
-            type: Datatypes.DATEONLY,
+            type: Datatypes.STRING,
             notEmpty: true
         },
 
         time: {
-            type: Datatypes.TIME,
+            type: Datatypes.STRING,
             notEmpty: true
         },
  
