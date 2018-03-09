@@ -7,15 +7,108 @@
 
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<style>
+        .container1 {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            grid-area: footer;
+            width: 100%;
+            background-color: #000;
+            color: #999;
+            text-align: center;
+            padding: 50px 0px 100px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 50% 50%;
+                grid-template-areas: "services"
+             }            
+           }
+        
+        @media screen and (max-width: 768px) {
+            .container1 {
+                width: 100%;
+                grid-template-rows: auto;
+                grid-template-columns: 100%;
+                grid-template-areas: "services";
+            }
+            
+         }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<!-- Services Content -->
-			</div>
+    <nav>
+        <ul>
+        	<li><a href="index.html"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Stylist</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Promotions</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+        </ul>
+    </nav>
+	<div class="container1">
+		<div class="services">
+			<!-- Services Content -->
+			<h3>Services</h3>
+				<div class="serviceItem">
+					<img src="./assets/images/highlights.jpg">
+					<p>Highlights</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/perm.jpg">
+					<p>Perm</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/wax.jpg">
+					<p>Wax</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/color.jpg">
+					<p>Color</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/family.jpg">
+					<p>Family Haircuts</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/extensions.jpg">
+					<p>Hair Extensions</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/eyelashes.jpg">
+					<p>Eyelashes Extensions</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/facial.jpg">
+					<p>Facial</p>
+				</div>
+
+				<div class="serviceItem">
+					<img src="./assets/images/makeup.jpg">
+					<p>Makeup</p>
+				</div>
 		</div>
 	</div>
+    <div class="footer">
+        <p>&copy; 2018 Vani-T Beauty Salon</p>
+    </div>
 
 </body>
 </html>

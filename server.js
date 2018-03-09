@@ -1,40 +1,82 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
-var methodOverride = require('method-override');
-var db = require('./models');
+const express = require('express');
+const passport   = require('passport')
+const session    = require('express-session')
+const bodyParser = require('body-parser')
+const env = require('dotenv').load()
+const exphbs = require('express-handlebars')
+const path = require('path');
 
-
-// Sets up the Express App
-// =============================================================
+//Express App
 var app = express();
 var PORT = process.env.PORT || 8080;
 
- 
-// override with the X-HTTP-Method-Override header in the request
-app.use(methodOverride('X-HTTP-Method-Override'));
+//Models
+const db = require("./models");
 
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+// Static directory
+app.use(express.static("public"));
+
+// BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Passport
+ 
+app.use(session({ secret: 'vani-t salon',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// Handlebars
+// app.set('views', './views')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+// app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.set('view engine', 'hbs');
+app.engine("handlebars", exphbs({ defaultLayout: "appointment" }));
+app.set('view engine','hbs');
+app.set('views', path.join(__dirname, 'views'));
+
+// app.get('/', function(req, res) {
+ 
+//     res.render('signin');
+ 
+// });
+
+//Routes
+const authRoute = require('./routes/auth.js')(app, passport);
+const appController = require('./controllers/appcontroller.js');
+
+app.use(appController);
 
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
-app.use(express.static('public'));
+// // override with the X-HTTP-Method-Override header in the request
+// app.use(methodOverride('X-HTTP-Method-Override'));
 
-// Routes
-// =============================================================
-require("./controllers/burgers_controller.js")(app);
+// // package for helmet (https)
+// app.use(helmet())
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.user); 
+ 
 
 
-
-// Starting our Express app
-// =============================================================
+//Sync Database
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
- });
+
+    app.listen(PORT, function(err) {
+ 
+        if (!err)
+            console.log("connection is working");
+        else console.log(err)
+     
+    });
+ 
+    console.log('Database is working')
+ 
+}).catch(function(err) {
+ 
+    console.log(err, "Database error")
+ 
+});

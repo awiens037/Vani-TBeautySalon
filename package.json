@@ -4,13 +4,19 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.10",
+    "express-session": "^1.15.6",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.2",
-    "sequelize": "^4.34.0"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.35.2"
   },
   "devDependencies": {},
   "scripts": {
