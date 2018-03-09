@@ -1,77 +1,70 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const exphbs = require("express-handlebars");
-const methodOverride = require('method-override');
-const helmet = require('helmet')
-const db = require('./models');
+const express = require('express');
+const passport   = require('passport')
+const session    = require('express-session')
+const bodyParser = require('body-parser')
+const env = require('dotenv').load()
+const exphbs = require('express-handlebars')
 
-
-// Sets up the Express App
-// =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
 
- 
-// override with the X-HTTP-Method-Override header in the request
-app.use(methodOverride('X-HTTP-Method-Override'));
-
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+// BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// package for helmet (https)
-app.use(helmet())
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-app.use(express.static('public'));
-
-// Routes
-// =============================================================
-require("./controllers/burgers_controller.js")(app);
-
-
-
-// Starting our Express app
-// =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
- });
-
- //CODE FOR JOI(VALIDATING USER INPUT) AND TWILIO SMS
- // =============================================================
-//  var twilio = require('twilio');
+// Passport
  
-// // Find your account sid and auth token in your Twilio account Console.
-// var client = new twilio('ACc418b053ae8fbd32647a1e09d94a08c7', '19c6a3095461efcd67e465e0f9fe98c4');
- 
-// // Send the text message.
-// client.messages.create({
-//   to: '858-218-5730',
-//   from: '1 442-245-5475 ',
-//   body: `Your appointment has been confirmed for ${req.body.date} at ${req.body.time}`
-// });
+app.use(session({ secret: 'vani-t salon',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
-// const Joi = require('joi');
- 
-// const schema = Joi.object().keys({
-//     username: Joi.string().alphanum().min(3).max(30).required(),
-//     password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
-//     access_token: [Joi.string(), Joi.number()],
-//     birthyear: Joi.number().integer().min(1900).max(2013),
-//     email: Joi.string().email()
-// }).with('username', 'birthyear').without('password', 'access_token')
- 
-// // Return result
-// const result = Joi.validate({ 
-//     username: 'abc', 
-//     birthyear: 1994 
-// }, schema)
+// // override with the X-HTTP-Method-Override header in the request
+// app.use(methodOverride('X-HTTP-Method-Override'));
 
-// const express = require('express')
-// const helmet = require('helmet')
-// const app = express()
+// // package for helmet (https)
 // app.use(helmet())
+
+// Handlebars
+app.set('views', './views')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+
+app.get('/', function(req, res) {
+ 
+    res.send('Vani-T Homepage');
+ 
+});
+
+//Models
+const db = require("./models");
+
+//Routes
+const authRoute = require('./routes/auth.js')(app, passport);
+const saloncontroller = require('./controllers/salon_controller.js')(app);
+
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.user); 
+ 
+
+
+//Sync Database
+db.sequelize.sync().then(function() {
+
+    app.listen(PORT, function(err) {
+ 
+        if (!err)
+            console.log("Site is working");
+        else console.log(err)
+     
+    });
+ 
+    console.log('Database is working')
+ 
+}).catch(function(err) {
+ 
+    console.log(err, "Database error")
+ 
+});
