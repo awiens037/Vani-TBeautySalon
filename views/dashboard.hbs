@@ -10,20 +10,32 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="./public/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
 </head>
  
 <body>
     <nav>
         <ul>
-        	<li><a href="#"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+
+        	<li><a href="#"><img style="height: 60px; width: auto; margin-top: 0" src="../public/assets/images/salonLogo.png"></a></li>
+
         	<li>Admin Dashboard</li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </nav>
 
     <h3>Appointments</h3>
-    	<div id="appointments">
+	{{#each appointments}}
+    	<p>Service: {{this.services}}</p>
+		<p>Date: {{this.date}}</p> 
+		<p>Time: {{this.time}}</p> 
+		<p>First Name: {{this.firstname}}</p> 
+		<p>Last Name: {{this.lastname}}</p> 
+		<p>Email: {{this.email}}</p> 
+		<p>Phone: {{this.phonenumber}}</p> 
+		 
+	{{/each}}
+
     		<!-- List of appointments goes here -->
     	</div>
  
