@@ -13,23 +13,31 @@ module.exports = function (sequelize, Datatypes) {
         },
 
         date: {
-            type: Datatypes.DATEONLY,
+            type: Datatypes.STRING,
             notEmpty: true
         },
 
         time: {
-            type: Datatypes.TIME,
+            type: Datatypes.STRING,
             notEmpty: true
         },
  
         firstname: {
             type: Datatypes.STRING,
-            notEmpty: true
+            allowNull: false,
+            validate: {  
+                notEmpty: true,  
+                len: [1, 15]
+            },
         },
 
         lastname: {
             type: Datatypes.STRING,
-            notEmpty: true
+            notEmpty: true,
+            validate: {   
+                notEmpty: true, 
+                len: [1, 15]
+            },
         },
  
         email: {
@@ -37,12 +45,18 @@ module.exports = function (sequelize, Datatypes) {
             validate: {
                 isEmail: true
             },
-            notEmpty: true
+            validate: {    
+                len: [5, 30],
+                notEmpty: true
+            },
         },
  
         phonenumber: {
             type: Datatypes.STRING,
-            notEmpty: true
+            validate: {    
+                len: [12],
+                notEmpty: true
+            },
             
         },
 
