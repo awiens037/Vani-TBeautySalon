@@ -1,51 +1,59 @@
-module.exports = function (sequelize, DATATYPES) {
-    var appointments = sequelize.define("appointments", {
+module.exports = function (sequelize, Datatypes) {
+    var Appointments = sequelize.define("appointments", {
  
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: DATATYPES.INTEGER
+            type: Datatypes.INTEGER
         },
  
         services: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             notEmpty: true
         },
 
         date: {
-            type: DATATYPES.DATE
+            type: Datatypes.DATEONLY,
+            notEmpty: true
         },
 
         time: {
-            type: DATATYPES.TIME
+            type: Datatypes.TIME,
+            notEmpty: true
         },
  
         firstname: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             notEmpty: true
         },
 
         lastname: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             notEmpty: true
         },
  
         email: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             validate: {
                 isEmail: true
-            }
+            },
+            notEmpty: true
         },
  
         phonenumber: {
-            type: DATATYPES.STRING,
-            allowNull: false
-        }
- 
+            type: Datatypes.STRING,
+            notEmpty: true
+            
+        },
+
+       stylist: {
+        type: Datatypes.STRING,
+        notEmpty: true
+       }
 
  
         // status: {
-        //     type: DATATYPES.ENUM('active', 'inactive'),
+        //     type: Datatypes.ENUM('active', 'inactive'),
         //     defaultValue: 'active'
         // }
  
@@ -53,5 +61,5 @@ module.exports = function (sequelize, DATATYPES) {
     },
 {timestamps: false}
 );
-    return appointments;
+    return Appointments;
 };
