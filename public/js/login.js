@@ -4,7 +4,7 @@ var attempt = 3; // Variable to count number of attempts.
 function validate(){
 	var username = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
-	if ( username == "Formget" && password == "password123"){
+	if ( username == "katkeivens@gmail.com" && password == "password123"){
 		alert ("Login successful");
 		window.location = "dashboard.hbs"; // Redirecting to other page.
 		return false;
