@@ -1,0 +1,85 @@
+```body {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8em;
+    margin: 0;
+    padding: 0;
+    color: #404040;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-bottom: solid #999 1px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+    margin: auto 0 0 10px;
+    transition: all 0.5s;
+}
+nav ul li a:hover {
+    color: #ffeda1;
+}
+.container1 {
+    padding: 0px 40px 40px 40px;
+}
+
+.instagramPhotos {
+    padding-top: 100px;
+    line-height: 1.1em;
+    display: inline-block;
+}
+
+.services {
+    padding-top: 100px;
+    line-height: 1.1em;
+}
+
+.booking {
+    padding-top: 100px;
+    line-height: 1.1em;
+}
+
+.serviceItem {
+    display: inline-block;
+}
+
+h3 {
+    color: #404040;
+    text-align: center;
+    font-family: 'Raleway', serif;
+}
+
+p {
+    color: #404040;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .instagramPhotos {
+        padding-top: 100px;
+    }
+}
+```
+Message Input
+
+Message #general
