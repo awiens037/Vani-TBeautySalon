@@ -95,12 +95,12 @@
 
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="Jane" id="first_name" name="firstname" type="text" class="validate">
+                        <input placeholder="Jane" id="first_name" name="firstname" type="text" class="validate" required />
                         <label for="first_name">First Name</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input placeholder="Doe" id="last_name" name="lastname" type="text" class="validate">
+                        <input placeholder="Doe" id="last_name" name="lastname" type="text" class="validate" required />
                         <label for="last_name">Last Name</label>
                     </div>
 
@@ -113,8 +113,8 @@
                     </div>
 
                     <div class="input-field col s6">
-                        <input placeholder="555-555-5555" id="telephone" type="tel" name="phonenumber" class="validate">
-                        <label for="telephon">Phone Number</label>
+                        <input placeholder="555-555-5555" id="telephone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" title="xxx-xxx-xxxx" name="phonenumber" class="validate">
+                        <label for="telephone">Phone Number (format: xxx-xxx-xxxx)</label>
                     </div>
 
                 </div>
