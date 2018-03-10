@@ -24,6 +24,32 @@
                 padding-top: 100px;
 			}
 
+            .stylist1{
+               grid-area: stylist1;
+               padding: 170px 10px 10px 150px;
+               text-align: center;
+           }
+           .stylist2{
+               grid-area: stylist2;
+               padding: 230px 100px 10px 10px;
+               text-align: center;
+           }
+           .stylist3{
+               grid-area: stylist3;
+               padding: 10px 10px 10px 150px;
+               text-align: center;
+           }
+           .stylist4{
+               grid-area: stylist4;
+               padding: 10px 100px 10px 10px;
+               text-align: center;
+
+               
+           }
+           .bio{
+             padding: 20px;
+           }
+
 	    	.footer {
 	            grid-area: footer;
 	            width: 100%;
@@ -32,6 +58,27 @@
 	            text-align: center;
 	            padding: 50px 0px 50px;
 	            font-size: 1em;
+            }
+
+            @media screen and (max-width: 768px) {
+             .container {
+               width: 100%;
+               grid-template-rows: auto;
+               grid-template-columns: 100%;
+               grid-template-areas: "stylist1" "stylist2" "stylist3" "stylist4";
+               }
+               .stylist1{
+                 padding: 200px 10px 0px 10px;
+               }
+               .stylist2{
+                 padding: 10px;
+               }
+               .stylist3{
+                 padding: 10px;
+               }
+               .stylist4{
+                 padding: 10px;
+               }
             }
 	    </style>
 	</head>
