@@ -1,7 +1,7 @@
 use Salon_db;
 
 create table appointments(
-    id integerauto_increment,
+    id integer auto_increment,
     services varchar(100),
     date varchar(50),
     time varchar(50),

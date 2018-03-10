@@ -58,12 +58,7 @@ module.exports = function (sequelize, Datatypes) {
                 notEmpty: true
             },
             
-        },
-
-       stylist: {
-        type: Datatypes.STRING,
-        notEmpty: true
-       }
+        }
     },
 {timestamps: false}
 );
