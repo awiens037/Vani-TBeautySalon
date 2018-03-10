@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="./assets/css/style.css">
+	    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
+	    <title>Vani-T Beauty Salon</title>
+	    <style type="text/css">
+	    	body {
+              height: 100%;
+              background: #000 fixed center center;
+              margin: 0;
+              padding: 0;
+            }
+			  .container{
+				
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                /*grid-gap: 25px;*/
+                grid-template-areas: "stylist1 stylist2" 
+                	"stylist3 stylist4" 
+            }
+            
+            .stylist1{
+                grid-area: stylist1;
+                padding: 170px 10px 10px 150px;
+                text-align: center;
+            }
+            .stylist2{
+                grid-area: stylist2;
+                padding: 230px 100px 10px 10px;
+                text-align: center;
+            }
+            .stylist3{
+                grid-area: stylist3;
+                padding: 10px 10px 10px 150px;
+                text-align: center;
+            }
+            .stylist4{
+                grid-area: stylist4;
+                padding: 10px 100px 10px 10px;
+                text-align: center;
+
+                
+            }
+            .bio{
+              padding: 20px;
+            }
+            
+
+	    	.footer {
+	            grid-area: footer;
+	            width: 100%;
+	            background-color: #000;
+	            color: #999;
+	            text-align: center;
+	            padding: 50px 0px 50px;
+	            font-size: 1em;
+            }
+
+        @media screen and (max-width: 768px) {
+          .container {
+            width: 100%;
+            grid-template-rows: auto;
+            grid-template-columns: 100%;
+            grid-template-areas: "stylist1" "stylist2" "stylist3" "stylist4";
+            }
+            .stylist1{
+              padding: 200px 10px 0px 10px;
+            }
+            .stylist2{
+              padding: 10px;
+            }
+            .stylist3{
+              padding: 10px;
+            }
+            .stylist4{
+              padding: 10px;
+            }
+          }  
+	    </style>
+	</head>
+	<body>
+        
+            <div class="navigator">
+      		    <nav>
+        	      <ul>
+        	         <li><a href="./index.html"><img  style="height: 100px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+        	         <li><a href="./index.html">About Us</a></li>
+        	         <li><a href="./services.html">Services</a></li>
+        	         <li><a href="./stylist.html">Stylist</a></li>
+        	         <li><a href="./gallery.html">Gallery</a></li>
+        	         <li><a href="./promotions.html">Promotions</a></li>
+        	         <li><a href="../views/appointment.hbs">Appointments</a></li>
+        	      </ul>
+              </nav>
+            </div>
+
+      <div class="container">  
+        	<div class="stylist1">
+        	   <div class="focus"><img class="round" src="./assets/images/rebeca.jpeg"></div>
+               <div class="bio"><b>Lana Kane</b> - Russia's top stylist for 6 years running!
+              </div>
+        	</div>  
+
+        	<div class="stylist2">
+        	   <div class="focus"><img class="round" src="./assets/images/rita.jpg"></div>
+               <div class="bio"><b>Janet Reno</b> - Winner of America's Top Sylist 2016
+              </div>
+        	</div> 
+
+        	<div class="stylist3">
+        	   <div class="focus"><img class="round" src="./assets/images/romina.jpeg"></div>
+               <div class="bio"><b>Tina Fey</b> - Dubbed Queen of Mascara by the Queen of England
+              </div>
+        	</div>
+
+
+        	<div class="stylist4">
+        	   <div class="focus"><img class="round" src="./assets/images/rafael.jpeg"></div>
+               <div class="bio"><b>Joey</b> - He cuts hair (Intern)
+              </div>
+        	</div> 
+        
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2018 Vani-T Beauty Salon</p>
+      </div>
+		
+	</body> 
+
+</html>	  
