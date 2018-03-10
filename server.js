@@ -45,6 +45,11 @@ app.set('views', path.join(__dirname, 'views'));
  
 // });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dcdd26ecea5d24a94eb2ea640c49a9eccc1e3a63
 //Routes
 const authRoute = require('./routes/auth.js')(app, passport);
 const appController = require('./controllers/appcontroller.js');
