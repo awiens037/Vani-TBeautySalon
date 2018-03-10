@@ -56,6 +56,13 @@ nav ul li a:hover {
     display: inline-block;
 }
 
+.round {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+
 h3 {
     color: #404040;
     text-align: center;
@@ -63,9 +70,10 @@ h3 {
 }
 
 p {
-    color: #404040;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8em;
     text-align: center;
-    font-family: 'Playfair Display', serif;
 }
 
 img {
