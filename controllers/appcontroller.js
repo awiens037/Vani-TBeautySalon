@@ -29,7 +29,7 @@ router.post("/appointment", function (req, res) {
     })
 
     .then(function (data) {
-      res.json(data);
+      res.render('Appointment is created')
       console.log(data)
       console.log('this is working')
     });
