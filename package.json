@@ -22,7 +22,9 @@
     "path": "^0.12.7",
     "sequelize": "^4.35.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "assemble": "^0.24.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
