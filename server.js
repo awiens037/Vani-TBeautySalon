@@ -10,7 +10,7 @@ const mysqltwo = require('mysql2');
 
 //Express App
 var app = express();
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 8080;
 
 //Models
 const db = require("./models");
@@ -45,11 +45,6 @@ app.set('views', path.join(__dirname, 'views'));
  
 // });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> dcdd26ecea5d24a94eb2ea640c49a9eccc1e3a63
 //Routes
 const authRoute = require('./routes/auth.js')(app, passport);
 const appController = require('./controllers/appcontroller.js');
