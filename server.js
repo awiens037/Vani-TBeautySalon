@@ -45,9 +45,9 @@ app.set('views', path.join(__dirname, 'views'));
  
 // });
 
-var assemble = assemble();
-assemble.engine('hbs', require('engine-handlebars'));
-assemble.helper('link-to', require('helper-link-to'));
+// var assemble = assemble();
+// assemble.engine('hbs', require('engine-handlebars'));
+// assemble.helper('link-to', require('helper-link-to'));
 
 //Routes
 const authRoute = require('./routes/auth.js')(app, passport);
