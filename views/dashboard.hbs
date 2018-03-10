@@ -27,13 +27,14 @@
 	<div class="appointments">
 	    <h3>Appointments</h3>
 		{{#each appointments}}
-	    	<p>Service: {{this.services}}</p>
-			<p>Date: {{this.date}}</p> 
-			<p>Time: {{this.time}}</p> 
-			<p>First Name: {{this.firstname}}</p> 
-			<p>Last Name: {{this.lastname}}</p> 
-			<p>Email: {{this.email}}</p> 
-			<p>Phone: {{this.phonenumber}}</p> 
+	    	<p style ="text-indent: 1.0em;">Service: {{this.services}}</p>
+			<p style ="text-indent: 4.0em;">Date: {{this.date}}</p> 
+			<p style ="text-indent: 4.0em;">Time: {{this.time}}</p> 
+			<p style ="text-indent: 4.0em;">First Name: {{this.firstname}}</p> 
+			<p style ="text-indent: 4.0em;">Last Name: {{this.lastname}}</p> 
+			<p style ="text-indent: 4.0em;">Email: {{this.email}}</p> 
+			<p style ="text-indent: 4.0em;">Phone: {{this.phonenumber}}</p>
+			<br> 
 			 
 		{{/each}}
 
