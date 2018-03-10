@@ -29,7 +29,9 @@ router.post("/appointment", function (req, res) {
     })
 
     .then(function (data) {
+   
       res.redirect('/')
+
       console.log(data)
       console.log('this is working')
     });

@@ -5,10 +5,12 @@ const bodyParser = require('body-parser')
 const env = require('dotenv').load()
 const exphbs = require('express-handlebars')
 const path = require('path');
+const mysqltwo = require('mysql2');
+
 
 //Express App
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3306;
 
 //Models
 const db = require("./models");
@@ -42,6 +44,10 @@ app.set('views', path.join(__dirname, 'views'));
 //     res.render('signin');
  
 // });
+
+var assemble = assemble();
+assemble.engine('hbs', require('engine-handlebars'));
+assemble.helper('link-to', require('helper-link-to'));
 
 //Routes
 const authRoute = require('./routes/auth.js')(app, passport);
