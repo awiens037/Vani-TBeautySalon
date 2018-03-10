@@ -26,7 +26,6 @@ router.post("/appointment", function (req, res) {
       lastname: req.body.lastname,
       email: req.body.email,
       phonenumber: req.body.phonenumber,
-      stylist: req.body.stylist
     })
 
     .then(function (data) {
