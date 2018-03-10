@@ -12,6 +12,7 @@
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "helper-link-to": "^0.3.0",
     "mocha": "^5.0.4",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.2",
