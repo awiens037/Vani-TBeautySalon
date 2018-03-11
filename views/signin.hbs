@@ -10,19 +10,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="./public/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style_3.css">
 </head>
  
 <body>
     <nav>
         <ul>
-        	<li><a href="./public/index.html"><img style="height: 60px; width: auto; margin-top: 0" src="./public/assets/images/salonLogo.png"></a></li>
+        	<li><a href="./public/index.html"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
         	<li>Admin Dashboard</li>
         </ul>
     </nav>
     <form id="signin" name="signin" method="post" action="signin">
         <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" required/>
+        <input class="text" name="email" type="email" required/>
         <label for="password">Password</label>
         <input name="password" type="password" id="password" required/>
         <input class="btn" type="submit" value="Sign In" onclick="validate()" />
@@ -32,7 +32,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 	<!-- JS -->
-	<script type="text/javascript" src="./public/js/login.js"></script>
+	<script type="text/javascript" src="./js/login.js"></script>
 
 </body>
 

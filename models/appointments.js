@@ -1,57 +1,66 @@
-module.exports = function (sequelize, DATATYPES) {
-    var appointments = sequelize.define("appointments", {
+module.exports = function (sequelize, Datatypes) {
+    var Appointments = sequelize.define("appointments", {
  
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: DATATYPES.INTEGER
+            type: Datatypes.INTEGER
         },
  
         services: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             notEmpty: true
         },
 
         date: {
-            type: DATATYPES.DATE
+            type: Datatypes.STRING,
+            notEmpty: true
         },
 
         time: {
-            type: DATATYPES.TIME
+            type: Datatypes.STRING,
+            notEmpty: true
         },
  
         firstname: {
-            type: DATATYPES.STRING,
-            notEmpty: true
+            type: Datatypes.STRING,
+            allowNull: false,
+            validate: {  
+                notEmpty: true,  
+                len: [1, 15]
+            },
         },
 
         lastname: {
-            type: DATATYPES.STRING,
-            notEmpty: true
+            type: Datatypes.STRING,
+            notEmpty: true,
+            validate: {   
+                notEmpty: true, 
+                len: [1, 15]
+            },
         },
  
         email: {
-            type: DATATYPES.STRING,
+            type: Datatypes.STRING,
             validate: {
                 isEmail: true
-            }
+            },
+            validate: {    
+                len: [5, 30],
+                notEmpty: true
+            },
         },
  
         phonenumber: {
-            type: DATATYPES.STRING,
-            allowNull: false
+            type: Datatypes.STRING,
+            validate: {    
+                len: [12],
+                notEmpty: true
+            },
+            
         }
- 
-
- 
-        // status: {
-        //     type: DATATYPES.ENUM('active', 'inactive'),
-        //     defaultValue: 'active'
-        // }
- 
- 
     },
 {timestamps: false}
 );
-    return appointments;
+    return Appointments;
 };

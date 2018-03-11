@@ -10,22 +10,36 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="./public/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style_3.css">
 </head>
  
 <body>
     <nav>
         <ul>
-        	<li><a href="./public/index.html"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+
+        	<li><a href="#"><img style="height: 60px; width: auto; margin-top: 0" src="./assets/images/salonLogo.png"></a></li>
+
         	<li>Admin Dashboard</li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </nav>
+	
+	<div class="appointments">
+	    <h3>Appointments</h3>
+		{{#each appointments}}
+	    	<p style ="text-indent: 1.0em;">Service: {{this.services}}</p>
+			<p style ="text-indent: 4.0em;">Date: {{this.date}}</p> 
+			<p style ="text-indent: 4.0em;">Time: {{this.time}}</p> 
+			<p style ="text-indent: 4.0em;">First Name: {{this.firstname}}</p> 
+			<p style ="text-indent: 4.0em;">Last Name: {{this.lastname}}</p> 
+			<p style ="text-indent: 4.0em;">Email: {{this.email}}</p> 
+			<p style ="text-indent: 4.0em;">Phone: {{this.phonenumber}}</p>
+			<br> 
+			 
+		{{/each}}
 
-    <h3>Appointments</h3>
-    	<div id="appointments">
     		<!-- List of appointments goes here -->
-    	</div>
+    </div>
  
 </body>
  

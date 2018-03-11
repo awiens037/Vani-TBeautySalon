@@ -2,13 +2,15 @@
 var bCrypt = require('bcrypt-nodejs');
 
 
-module.exports = function (passport, user) {
+
+module.exports = function (passport, user, appointments) {
 
 
     var User = user;
 
-    var LocalStrategy = require('passport-local').Strategy;
+    var Appointments = appointments;
 
+    var LocalStrategy = require('passport-local').Strategy;
 
     passport.use('local-signup', new LocalStrategy(
 
@@ -17,12 +19,9 @@ module.exports = function (passport, user) {
             usernameField: 'email',
 
             passwordField: 'password',
-
-            passReqToCallback: true // allows us to pass back the entire request to the callback
-
+            // allows us to pass back the entire request to the callback
+            passReqToCallback: true
         },
-
-
 
         function (req, email, password, done) {
 
@@ -90,6 +89,8 @@ module.exports = function (passport, user) {
         }
 
     ));
+
+
     //serialize
     passport.serializeUser(function (user, done) {
 
@@ -116,71 +117,71 @@ module.exports = function (passport, user) {
     });
 
     //LOCAL SIGNIN
-passport.use('local-signin', new LocalStrategy(
- 
-    {
- 
-        // Local strategy uses email for username as well as password
- 
-        usernameField: 'email',
- 
-        passwordField: 'password',
- 
-        passReqToCallback: true // allows us to pass back the entire request to the callback
- 
-    },
- 
- 
-    function(req, email, password, done) {
- 
-        var User = user;
- 
-        var isValidPassword = function(userpass, password) {
- 
-            return bCrypt.compareSync(password, userpass);
- 
-        }
-        // checks email if it is correct with password
-        User.findOne({
-            where: {
-                email: email
+    passport.use('local-signin', new LocalStrategy(
+
+        {
+
+            // Local strategy uses email for username as well as password
+
+            usernameField: 'email',
+
+            passwordField: 'password',
+
+            passReqToCallback: true // allows us to pass back the entire request to the callback
+
+        },
+
+
+        function (req, email, password, done) {
+
+            var User = user;
+
+            var isValidPassword = function (userpass, password) {
+
+                return bCrypt.compareSync(password, userpass);
+
             }
-        }).then(function(user) {
- 
-            if (!user) {
- 
+            // checks email if it is correct with password
+            User.findOne({
+                where: {
+                    email: email
+                }
+            }).then(function (user) {
+
+                if (!user) {
+
+                    return done(null, false, {
+                        message: 'Email does not exist'
+                    });
+
+                }
+
+                if (!isValidPassword(user.password, password)) {
+
+                    return done(null, false, {
+                        message: 'Incorrect password.'
+                    });
+
+                }
+
+
+                var userinfo = user.get();
+                return done(null, userinfo);
+
+
+            }).catch(function (err) {
+
+                console.log("Error:", err);
+
                 return done(null, false, {
-                    message: 'Email does not exist'
+                    message: 'Something went wrong with your Signin'
                 });
- 
-            }
- 
-            if (!isValidPassword(user.password, password)) {
- 
-                return done(null, false, {
-                    message: 'Incorrect password.'
-                });
- 
-            }
- 
- 
-            var userinfo = user.get();
-            return done(null, userinfo);
- 
- 
-        }).catch(function(err) {
- 
-            console.log("Error:", err);
- 
-            return done(null, false, {
-                message: 'Something went wrong with your Signin'
+
             });
- 
-        });
- 
- 
-    }
- 
-));
+
+
+        }
+
+    ));
 
 }
