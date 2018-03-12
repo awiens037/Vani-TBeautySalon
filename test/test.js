@@ -4,17 +4,18 @@ var expect = require("chai").expect;
 var nightmare = Nightmare({ show: true });
 
 nightmare
-  .goto("http://localhost:8080/signin")
-  .type("#email", "leeland_clenista@yahoo.com")
+  .goto("https://aqueous-forest-79100.herokuapp.com/dashboard")
+  .click(".text")
+  .type(".text", "leeland_clenista@yahoo.com")
+  .click("#password")
   .type("#password", "password")
-  .click("#btn")
-  .wait("#links a")
+  .click(".btn")
   .evaluate(function() {
-    return document.querySelector("#links a").href;
+    
   })
   .end()
   .then(function(result) {
-    console.log(result);
+    console.log('this works')
   })
   .catch(function(error) {
     console.error("Search failed:", error);
