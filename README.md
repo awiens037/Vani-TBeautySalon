@@ -16,3 +16,7 @@ User can pick date, time, service, etc to schedule an appointment
 ## Admin Sign Up page
 Owner page with different CSS to differentiate from UI
 <img width="1386" alt="screen shot 2018-03-13 at 7 02 07 pm" src="https://user-images.githubusercontent.com/30426278/37379529-1225805a-26f1-11e8-8d3a-34caef1ee851.png">
+
+## Admin Display Page
+Shows scheduled appointments
+<img width="1307" alt="screen shot 2018-03-13 at 7 04 34 pm" src="https://user-images.githubusercontent.com/30426278/37379578-66e364f4-26f1-11e8-8304-1f895851169e.png">
